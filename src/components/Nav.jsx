@@ -9,7 +9,7 @@ function Nav() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   return (
-    <nav className="bg-transparent border border-dark/30 rounded-full">
+    <nav className="bg-transparent border border-dark/30 rounded-[32px]">
       <div className="relative flex items-center justify-between mx-auto p-4 sm:px-8">
         <Logo />
         <NavLinks />
