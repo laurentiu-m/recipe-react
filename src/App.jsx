@@ -6,11 +6,13 @@ import Recipe from "./pages/Recipe";
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/recipes" element={<Recipes />} />
-        <Route path="/recipe/:id" element={<Recipe />} />
-      </Routes>
+      <div className="font-montserrat text-dark p-4 xl:px-16">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/recipes" element={<Recipes />} />
+          <Route path="/recipe/:id" element={<Recipe />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
