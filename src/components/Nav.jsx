@@ -1,5 +1,6 @@
 import NavLinks from "./NavLinks";
 import MobileNavMenu from "./MobileNavMenu";
+import logo from "../assets/logo.svg";
 import Logo from "./Logo";
 import hamburgerMenu from "../assets/hamburger-menu.svg";
 import closeIcon from "../assets/close-icon.svg";
@@ -11,7 +12,7 @@ function Nav() {
   return (
     <nav className="bg-transparent border border-dark/30 rounded-[32px]">
       <div className="relative flex items-center justify-between mx-auto p-4 sm:px-8">
-        <Logo />
+        <Logo logo={logo} color={"dark"} />
         <NavLinks />
         <button
           onClick={() => setShowMobileMenu(!showMobileMenu)}
