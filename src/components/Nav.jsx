@@ -14,9 +14,12 @@ function Nav() {
       <div className="relative flex items-center justify-between mx-auto p-4 sm:px-8">
         <Logo logo={logo} color={"dark"} />
         <NavLinks />
+
         <button
           onClick={() => setShowMobileMenu(!showMobileMenu)}
-          className="bg-dark/20 w-9 h-9 flex items-center justify-center rounded-full sm:hidden"
+          className={`${
+            showMobileMenu ? "bg-primaryColor2" : "bg-dark/20"
+          } w-9 h-9 flex items-center justify-center rounded-full transition-bg duration-300 sm:hidden`}
         >
           <img
             src={showMobileMenu ? closeIcon : hamburgerMenu}
@@ -24,7 +27,7 @@ function Nav() {
             className="w-5 h-5"
           />
         </button>
-        {showMobileMenu && <MobileNavMenu />}
+        <MobileNavMenu isOpen={showMobileMenu} />
       </div>
     </nav>
   );

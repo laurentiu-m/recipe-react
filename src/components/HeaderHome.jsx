@@ -8,7 +8,7 @@ function HeaderHome() {
     >
       <div className="absolute rounded-[32px] inset-0 bg-dark opacity-80"></div>
 
-      <div className="relative z-10 flex flex-col items-center gap-3">
+      <div className="relative z-20 flex flex-col items-center gap-3">
         <h1 className="text-white font-extrabold text-[38px] uppercase leading-none lg:w-[900px] lg:text-[80px]">
           Unleash Culinary Excellence
         </h1>
@@ -18,7 +18,7 @@ function HeaderHome() {
         </p>
       </div>
 
-      <button className="relative z-10 bg-primaryColor2 px-6 py-3 rounded-3xl font-semibold text-sm uppercase">
+      <button className="relative z-20 bg-primaryColor2 px-6 py-3 rounded-3xl font-semibold text-sm uppercase transition-all hover:bg-white">
         Explore Recipes
       </button>
     </div>

@@ -12,13 +12,16 @@ function Newsletter() {
         </p>
       </div>
 
-      <form className="relative w-full flex flex-col gap-2 sm:w-[400px] lg:w-[500px]">
+      <form
+        action="/"
+        className="relative w-full flex flex-col gap-2 sm:w-[400px] lg:w-[500px]"
+      >
         <input
           type="text"
           placeholder="Email Address"
           className="px-6 py-3 rounded-[24px] bg-white font-medium placeholder:text-dark/40 placeholder:font-medium sm:py-4"
         />
-        <button className="px-6 py-3 rounded-[24px] bg-dark uppercase text-white text-sm font-medium sm:absolute sm:right-2 sm:top-1/2 sm:-translate-y-1/2">
+        <button className="px-6 py-3 rounded-[24px] bg-dark uppercase text-white text-sm font-medium transition-all sm:hover:bg-primaryColor3 sm:absolute sm:right-2 sm:top-1/2 sm:-translate-y-1/2">
           Subscribe
         </button>
       </form>

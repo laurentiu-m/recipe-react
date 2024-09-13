@@ -6,7 +6,7 @@ function RecipeCard({ recipe }) {
       <img
         src={recipe.strMealThumb}
         alt="food-img"
-        className="rounded-t-[16px] object-cover w-full h-[200px] min-[500px]:h-[280px] md:h-[320px]"
+        className="rounded-t-[16px] object-cover cursor-pointer w-full h-[200px] min-[500px]:h-[280px] md:h-[320px]"
       />
       <div className="flex flex-col gap-6 p-4 flex-grow xl:p-6">
         <div className="flex flex-col gap-1 flex-grow">
@@ -16,7 +16,7 @@ function RecipeCard({ recipe }) {
           <h1 className="xl:text-lg">{recipe.strCategory}</h1>
         </div>
 
-        <button className="px-6 py-3 border border-dark bg-transparent rounded-[24px] font-semibold text-sm uppercase mt-auto">
+        <button className="px-6 py-3 border border-dark bg-transparent rounded-[24px] font-semibold text-sm uppercase mt-auto transition-all duration-200 hover:bg-dark hover:text-light">
           View Recipe
         </button>
       </div>
