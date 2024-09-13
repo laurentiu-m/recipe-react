@@ -1,7 +1,6 @@
 import Nav from "../components/Nav";
 import HeaderHome from "../components/HeaderHome";
 import FeaturedRecipes from "../components/FeaturedRecipes";
-import RecipesHome from "../components/RecipesHome";
 import Footer from "../components/Footer";
 
 function Home() {
@@ -12,7 +11,6 @@ function Home() {
 
       <main>
         <FeaturedRecipes />
-        {/* <RecipesHome /> */}
       </main>
 
       <Footer />
