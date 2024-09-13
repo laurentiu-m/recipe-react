@@ -1,6 +1,7 @@
 import Nav from "../components/Nav";
 import HeaderHome from "../components/HeaderHome";
 import FeaturedRecipes from "../components/FeaturedRecipes";
+import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 
 function Home() {
@@ -9,9 +10,8 @@ function Home() {
       <Nav />
       <HeaderHome />
 
-      <main>
-        <FeaturedRecipes />
-      </main>
+      <FeaturedRecipes />
+      <Newsletter />
 
       <Footer />
     </div>
