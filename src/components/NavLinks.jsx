@@ -7,7 +7,7 @@ function NavLinks() {
         </a>
       </li>
       <li>
-        <a href="/" className="transition-all hover:text-primaryColor2">
+        <a href="/recipes" className="transition-all hover:text-primaryColor2">
           Recipes
         </a>
       </li>

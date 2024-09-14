@@ -7,7 +7,7 @@ function MobileNavMenu({ isOpen }) {
     <div
       className={`w-full ${
         isOpen ? "max-h-[400px]" : "max-h-0"
-      } overflow-hidden absolute top-[90px] left-0 z-50 rounded-t-[32px] shadow-xl shadow-dark transition-max-height ease duration-500 sm:hidden`}
+      } overflow-hidden absolute top-[90px] left-0 z-50 rounded-[32px] shadow-xl shadow-dark transition-max-height ease duration-500 sm:hidden`}
     >
       <div className="flex flex-col gap-10 py-11 px-4 bg-dark text-white font-semibold uppercase">
         <Links />
