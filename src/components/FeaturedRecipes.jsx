@@ -1,32 +1,12 @@
-import { useEffect, useState } from "react";
-import { fetchData } from "../utils/utils";
+import { useRecipesId } from "../hooks/useRecipesId";
 import RecipeCard from "./RecipeCard";
 
+const recipesId = ["52982", "52794", "52947"];
+
 function FeaturedRecipes() {
-  const [recipes, setRecipes] = useState([]);
+  const recipes = useRecipesId(recipesId);
 
-  useEffect(() => {
-    const recipesId = ["52982", "52794", "52947"];
-
-    const fetchRecipeId = async () => {
-      try {
-        const recipesData = await Promise.all(
-          recipesId.map((id) =>
-            fetchData(
-              `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
-            )
-          )
-        );
-        setRecipes(recipesData.map((recipe) => recipe.meals[0]));
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchRecipeId();
-  }, []);
-
-  if (recipes.length === 0) {
+  if (recipes.length === 0 || !recipes) {
     return;
   }
 
