@@ -16,8 +16,9 @@ export const useRecipesId = (recipesId) => {
 
       setRecipes(recipesData.map((recipe) => recipe.meals[0]));
     };
-
-    fetchRecipes();
+    if (recipesId.length > 0 || recipesId) {
+      fetchRecipes();
+    }
   }, [recipesId]);
 
   return recipes;
