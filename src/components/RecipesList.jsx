@@ -3,8 +3,9 @@ import { useRecipesId } from "../hooks/useRecipesId";
 import Category from "./Category";
 import Search from "./Search";
 import RecipeCard from "./RecipeCard";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useSearchRecipes } from "../hooks/useSearchRecipes";
+import { useRecipesIdByCategory } from "../hooks/useRecipesIdByCategory";
 
 const defaultRecipesId = [
   "52959",
@@ -19,37 +20,15 @@ const defaultRecipesId = [
 
 function RecipesList() {
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [recipesId, setRecipesId] = useState([]);
   const [searchRecipesValue, setSearchRecipesValue] = useState("");
 
   const categories = useCategories();
   const defaultRecipes = useRecipesId(defaultRecipesId);
+  const recipesId = useRecipesIdByCategory(selectedCategory);
   const selectedRecipes = useRecipesId(recipesId);
   const searchedRecipes = useSearchRecipes(searchRecipesValue);
 
   const inputRef = useRef();
-
-  useEffect(() => {
-    const fetchRecipesIdByCategory = async (category) => {
-      if (!category) return;
-      try {
-        const response = await fetch(
-          `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
-        );
-        const data = await response.json();
-        const recipesId = data.meals.map((meal) => meal.idMeal);
-        setRecipesId(recipesId);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchRecipesIdByCategory(selectedCategory);
-  }, [selectedCategory]);
-
-  if (defaultRecipes.length === 0) {
-    return;
-  }
 
   const handleCategory = (category) => {
     setSelectedCategory(category);
@@ -60,8 +39,6 @@ function RecipesList() {
     setSearchRecipesValue(inputRef.current.value);
     inputRef.current.value = "";
   };
-
-  console.log(searchedRecipes);
 
   const currentRecipes = selectedCategory
     ? selectedRecipes
