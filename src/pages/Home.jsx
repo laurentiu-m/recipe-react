@@ -1,13 +1,18 @@
 import Nav from "../components/Nav";
 import HeaderHome from "../components/HeaderHome";
+import FeaturedRecipes from "../components/FeaturedRecipes";
+import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 
 function Home() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 min-h-screen">
       <Nav />
       <HeaderHome />
-      <main></main>
+
+      <FeaturedRecipes />
+      <Newsletter />
+
       <Footer />
     </div>
   );
