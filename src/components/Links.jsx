@@ -18,7 +18,7 @@ function Links() {
       <div className="hidden h-5 border-l border-l-white/15 md:block"></div>
 
       <li className="py-4 px-2">
-        <a href="/" className="transition-all hover:text-white/60">
+        <a href="/about" className="transition-all hover:text-white/60">
           About Us
         </a>
       </li>

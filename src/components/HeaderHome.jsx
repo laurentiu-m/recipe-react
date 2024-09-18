@@ -1,6 +1,13 @@
 import backgroundImage from "../assets/background.jpg";
+import { useNavigate } from "react-router-dom";
 
 function HeaderHome() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/recipes");
+  };
+
   return (
     <div
       className="relative h-[80vh] flex flex-col items-center justify-center gap-10 px-4 rounded-[32px] bg-cover bg-center text-center"
@@ -18,7 +25,10 @@ function HeaderHome() {
         </p>
       </div>
 
-      <button className="relative z-20 bg-primaryColor2 px-6 py-3 rounded-3xl font-semibold text-sm uppercase transition-all hover:bg-white">
+      <button
+        onClick={handleClick}
+        className="relative z-20 bg-primaryColor2 px-6 py-3 rounded-3xl font-semibold text-sm uppercase transition-all hover:bg-white"
+      >
         Explore Recipes
       </button>
     </div>

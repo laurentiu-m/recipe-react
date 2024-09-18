@@ -12,7 +12,7 @@ function NavLinks() {
         </a>
       </li>
       <li>
-        <a href="/" className="transition-all hover:text-primaryColor2">
+        <a href="/about" className="transition-all hover:text-primaryColor2">
           About Us
         </a>
       </li>
