@@ -16,7 +16,11 @@ export const useRecipeId = (id) => {
       }
     };
 
-    fetchRecipe();
+    const timer = setTimeout(() => {
+      fetchRecipe();
+    }, 1000);
+
+    return () => clearTimeout(timer);
   }, [id]);
 
   return recipe;

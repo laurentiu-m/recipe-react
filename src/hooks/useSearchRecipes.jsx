@@ -5,6 +5,7 @@ export const useSearchRecipes = (value) => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
+    let timer;
     const fetchRecipes = async () => {
       try {
         const data = await fetchData(
@@ -16,7 +17,13 @@ export const useSearchRecipes = (value) => {
       }
     };
 
-    if (value.length !== 0) fetchRecipes();
+    if (value.length !== 0) {
+      timer = setTimeout(() => {
+        fetchRecipes();
+      }, 1000);
+    }
+
+    return () => clearTimeout(timer);
   }, [value]);
 
   return recipes;

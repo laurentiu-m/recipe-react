@@ -5,6 +5,8 @@ export const useRecipesId = (recipesId) => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
+    let timer;
+
     const fetchRecipes = async () => {
       const recipesData = await Promise.all(
         recipesId.map((id) =>
@@ -16,9 +18,14 @@ export const useRecipesId = (recipesId) => {
 
       setRecipes(recipesData.map((recipe) => recipe.meals[0]));
     };
+
     if (recipesId.length > 0 || recipesId) {
-      fetchRecipes();
+      timer = setTimeout(() => {
+        fetchRecipes();
+      }, 1000);
     }
+
+    return () => clearTimeout(timer);
   }, [recipesId]);
 
   return recipes;

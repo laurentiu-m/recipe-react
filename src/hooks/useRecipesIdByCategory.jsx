@@ -5,6 +5,7 @@ export const useRecipesIdByCategory = (category) => {
   const [recipesId, setRecipesId] = useState([]);
 
   useEffect(() => {
+    let timer;
     const fetchRecipesId = async () => {
       try {
         const data = await fetchData(
@@ -17,7 +18,13 @@ export const useRecipesIdByCategory = (category) => {
       }
     };
 
-    if (category) fetchRecipesId();
+    if (category) {
+      timer = setTimeout(() => {
+        fetchRecipesId();
+      }, 1000);
+    }
+
+    return () => clearTimeout(timer);
   }, [category]);
 
   return recipesId;

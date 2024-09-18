@@ -2,7 +2,6 @@ import { useLocation } from "react-router-dom";
 
 function NavLinks() {
   const location = useLocation();
-  console.log(location);
 
   return (
     <ul className="hidden sm:flex gap-12 mr-6 font-semibold uppercase lg:gap-16 xl:gap-24">
@@ -13,7 +12,12 @@ function NavLinks() {
             : "text-dark/50"
         }`}
       >
-        <a href="/" className="transition-all hover:text-primaryColor2">
+        <a
+          href="/"
+          className={`transition-all hover:text-primaryColor2 ${
+            location.pathname === "/" && "hover:text-dark"
+          }`}
+        >
           Home
         </a>
       </li>
@@ -24,7 +28,12 @@ function NavLinks() {
             : "text-dark/50"
         }`}
       >
-        <a href="/recipes" className="transition-all hover:text-primaryColor2">
+        <a
+          href="/recipes"
+          className={`transition-all hover:text-primaryColor2 ${
+            location.pathname.startsWith("/recipe") && "hover:text-dark"
+          }`}
+        >
           Recipes
         </a>
       </li>
@@ -35,7 +44,12 @@ function NavLinks() {
             : "text-dark/50"
         }`}
       >
-        <a href="/about" className="transition-all hover:text-primaryColor2">
+        <a
+          href="/about"
+          className={`transition-all hover:text-primaryColor2 ${
+            location.pathname === "/about" && "hover:text-dark"
+          }`}
+        >
           About Us
         </a>
       </li>

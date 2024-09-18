@@ -3,8 +3,11 @@ import HeaderAbout from "../components/HeaderAbout";
 import FeaturedRecipes from "../components/FeaturedRecipes";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
+import { useScrollTop } from "../hooks/useScollTop";
 
 function AboutUs() {
+  useScrollTop();
+
   return (
     <div className="flex flex-col gap-4 min-h-screen">
       <Nav />

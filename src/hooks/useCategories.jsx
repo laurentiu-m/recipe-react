@@ -7,7 +7,7 @@ export const useCategories = () => {
   useEffect(() => {
     const url = "https://www.themealdb.com/api/json/v1/1/list.php?c=list";
 
-    const fetchCategories = async (url) => {
+    const fetchCategories = async () => {
       try {
         const categoriesData = await fetchData(url);
         setCategories(categoriesData.meals);
@@ -16,7 +16,11 @@ export const useCategories = () => {
       }
     };
 
-    fetchCategories(url);
+    const timer = setTimeout(() => {
+      fetchCategories();
+    }, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return categories;
